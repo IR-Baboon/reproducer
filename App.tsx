@@ -27,7 +27,7 @@ const MediaIconContainer = styled.TouchableOpacity`
   justify-content: flex-start;
   align-items: center;
 `;
-function App2() {
+function App() {
   const isDarkMode = useColorScheme() === 'light';
 
   return (
@@ -147,4 +147,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App2;
+export default App;

@@ -59,28 +59,8 @@ export default function ImagePickerx({
     return false; // Return false in case of error
   }
   };
-  const askPermissionCamera = async () => {
-    let permission = false;
-    if (Platform.OS === 'ios') {
-      permission = true;
-    } else if (Platform.OS === 'android') {
-      const OsVer = Platform.Version;
-      const camera = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA);
-      if (OsVer < 33) {
-        const write = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE);
-        if (write === 'granted') {
-          permission = true;
-        }
-      } else {
-        if (camera === 'granted') {
-          permission = true;
-        }
-      }
-    }
-    return permission;
-  };
   const startCamera = async () => {
-    console.log('starting camera')
+
     const permission = await askPermissionStorage();
     if (!permission) {
       console.log('no permission')
@@ -95,7 +75,7 @@ export default function ImagePickerx({
     }
   };
   const startFilePicker = async () => {
-    console.log('starting filepicker')
+
     const permission = await askPermissionStorage();
     if (!permission) {
       return;
@@ -134,7 +114,7 @@ export default function ImagePickerx({
   };
 
   return (
-    <ModalContentContainer vertical orientation={'center'}>
+    <ModalContentContainer>
       <PhotoMenuTextContainer orientation={'center'} onPress={startCamera}>
         <Camera size={48} />
         <PhotoMenuText>Foto maken</PhotoMenuText>

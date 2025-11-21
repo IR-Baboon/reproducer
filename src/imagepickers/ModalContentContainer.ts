@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
-import ContentContainer from './ContentContainer';
 
-const ModalContentContainer = styled(ContentContainer)`
+const ModalContentContainer = styled.TouchableOpacity`
   background-color: white;
   //width: 60%;
   max-width: 98%;
