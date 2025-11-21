@@ -84,7 +84,7 @@ function AppContent() {
     if (image && image.path) {
       // const uri = Platform.OS !== 'ios' ? image.uri?.replace('file://', '') : image.uri;
 
-      //  using the FormData approach
+      //  using the FormData approach - upload succeeds, creates corrupt file though
       const formData = new FormData()
         formData.append('file', {
           type: mime.getType(image.path),
@@ -99,7 +99,7 @@ function AppContent() {
         body:  formData,
       });
 
-      // using fetch creating a blob
+      // using fetch creating a blob - returns TypeError
       const response = await fetch(image.path)
       const blob1 = await response.blob()
       const respons2 = await fetch('enter api url here', {
@@ -110,7 +110,7 @@ function AppContent() {
         body:  blob1,
       });
 
-      // using XML Http Request creating a blob
+      // using XML Http Request creating a blob - return an error
       const blob2 = await requestBlob(image.path)
       const respons3 = await fetch('enter api url here', {
         method: 'PUT',
