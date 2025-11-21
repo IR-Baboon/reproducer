@@ -115,13 +115,13 @@ export default function ImagePickerx({
 
   return (
     <ModalContentContainer>
-      <PhotoMenuTextContainer orientation={'center'} onPress={startCamera}>
+      <PhotoMenuTextContainer onPress={startCamera}>
         <Camera size={48} />
-        <PhotoMenuText>Foto maken</PhotoMenuText>
+        <PhotoMenuText>Make Photo</PhotoMenuText>
       </PhotoMenuTextContainer>
-      <PhotoMenuTextContainer onPress={startFilePicker} orientation={'center'}>
+      <PhotoMenuTextContainer onPress={startFilePicker}>
         <Imago size={48} />
-        <PhotoMenuText>Foto kiezen</PhotoMenuText>
+        <PhotoMenuText>Pick Image</PhotoMenuText>
       </PhotoMenuTextContainer>
     </ModalContentContainer>
   );

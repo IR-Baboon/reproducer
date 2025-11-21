@@ -127,7 +127,8 @@ function AppContent() {
       <CustomText>upload function:</CustomText>
 
       <ImagePickerx callback={onImageChange} />
-      {image && <Image src={image.path} style={{height: 50, width: 50}}/>}
+      <CustomText>Selected Image:</CustomText>
+      {image && <Image src={image.path} style={{height: 150, width: 150}}/>}
 
       <Button title="Upload Image" onPress={() => onImageSelected()} />
     </View>
